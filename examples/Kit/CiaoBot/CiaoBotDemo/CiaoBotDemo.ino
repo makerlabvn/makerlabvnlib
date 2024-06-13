@@ -25,7 +25,7 @@ DFRobotDFPlayerMini myDFPlayer;         //Declare DFPlayerMini object
 void setup()
 {
   // put your setup code here, to run once:
-
+  
   //Initialize lcd and turn the backlight on
   lcd.init();
   lcd.backlight();
@@ -60,9 +60,7 @@ void loop()
   if (digitalRead(10) == 0) //If the sensor that connect to pin D10 is active (ACTIVE LOW <=> when is active, is 0)
   {
     while (!((digitalRead(11) == 0) && (digitalRead(10) == 1))) // Wait until a person go by the other sensor
-    {
-      delay(0);
-    }
+    {}
     // BYE
     myDFPlayer.playMp3Folder(2); //start playing the second file in order of which file you write to the micro SD card first
     if (numPerson > 0)
@@ -70,26 +68,19 @@ void loop()
       numPerson -= 1; //Decrease by 1 because someone have left
     }
     while (!((digitalRead(10) == 1) && (digitalRead(11) == 1))) //and wait until all sensors stop active (or standby)
-    {
-      delay(0);
-    }
+    {}
   }
 
   //The same as above, but D11 active first
   if (digitalRead(11) == 0)
   {
     while (!((digitalRead(11) == 1) && (digitalRead(10) == 0)))
-    {
-      delay(0);
-    }
+    {}
     myDFPlayer.playMp3Folder(1);
     int_checkin += 1;
     numPerson += 1;
     while (!((digitalRead(10) == 1) && (digitalRead(11) == 1)))
-    {
-      delay(0);
-    }
+    {}
   }
 
-  delay(0);
 }
