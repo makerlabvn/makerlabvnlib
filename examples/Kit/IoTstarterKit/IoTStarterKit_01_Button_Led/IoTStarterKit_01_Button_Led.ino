@@ -14,14 +14,14 @@
 
 // Step 2: include library
 #include "BlynkGate.h"
-#include "OneButton.h"
+#include "MKL_OneButton.h"
 
 // Step 3: Setup WiFi
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "MakerLab.vn";  // Key in your wifi name (Bandwidth 2.4Ghz). You can check with your smart phone for your wifi name
 char pass[] = "";             // Key in your wifi password.
 
-OneButton myButton(BUTTON_PIN, true, true);
+MKL_OneButton myButton(BUTTON_PIN, true, true);
 
 unsigned long lastTimeSen = 0;
 int ledState = 0;

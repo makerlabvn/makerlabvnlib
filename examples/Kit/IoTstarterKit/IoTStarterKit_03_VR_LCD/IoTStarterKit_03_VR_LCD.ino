@@ -12,7 +12,7 @@
 
 // Step 2: include library
 #include "BlynkGate.h"
-#include "LiquidCrystal_I2C.h"
+#include "MKL_LiquidCrystal_I2C.h"
 // Step 3: Setup WiFi
 char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "MakerLab.vn";  // Key in your wifi name (Bandwidth 2.4Ghz). You can check with your smart phone for your wifi name
@@ -23,7 +23,7 @@ char pass[] = "";             // Key in your wifi password.
 #define POTEN_PIN A2
 
 unsigned long intervalLCD = 0;
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 unsigned long lastTimeSen = 0;
 

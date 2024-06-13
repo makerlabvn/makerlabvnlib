@@ -14,8 +14,8 @@
 
 // Step 2: include library
 #include "BlynkGate.h"
-#include "LiquidCrystal_I2C.h"
-#include "OneButton.h"
+#include "MKL_LiquidCrystal_I2C.h"
+#include "MKL_OneButton.h"
 
 // Step 3: Setup WiFi
 char auth[] = BLYNK_AUTH_TOKEN;
@@ -23,9 +23,9 @@ char ssid[] = "MakerLab.vn";  // Key in your wifi name (Bandwidth 2.4Ghz). You c
 char pass[] = "";             // Key in your wifi password.
 
 unsigned long intervalLCD = 0;
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-OneButton myButton(BUTTON_PIN, true, true);
+MKL_OneButton myButton(BUTTON_PIN, true, true);
 
 unsigned long lastTimeSen = 0;
 int ledState = 0;

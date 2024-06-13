@@ -10,8 +10,8 @@
 //Include nesscessery libraries
 #include <Arduino.h>
 #include <Wire.h>
-#include "LiquidCrystal_I2C.h"
-#include "DFRobotDFPlayerMini.h"
+#include "MKL_LiquidCrystal_I2C.h"
+#include "MKL_DFRobotDFPlayerMini.h"
 #include <SoftwareSerial.h>
 
 //Declare variables and objects
@@ -19,8 +19,8 @@ int numPerson;
 int int_checkin;
 
 SoftwareSerial mySoftwareSerial(2, 3);  // Turn Arduino D2 pin into RX pin, turn Arduino D3 pin into TX pin (Software UART)
-LiquidCrystal_I2C lcd(0x27, 16, 2);     //Declare a lcd object which I2C address is 0x27, 16 columns, and 2 rows
-DFRobotDFPlayerMini myDFPlayer;         //Declare DFPlayerMini object
+MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);     //Declare a lcd object which I2C address is 0x27, 16 columns, and 2 rows
+MKL_DFRobotDFPlayerMini myDFPlayer;         //Declare DFPlayerMini object
 
 void setup()
 {
