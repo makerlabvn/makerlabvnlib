@@ -3,7 +3,6 @@
  * Author: Daniel Hoang
  * Date: 05/20/2024
  * Version: v1.0
- * Purpose: Count person in the room
  * Tutorial: https://www.makerlab.vn/ciaobot
 */
 
