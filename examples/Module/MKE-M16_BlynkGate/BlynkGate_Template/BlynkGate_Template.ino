@@ -23,7 +23,7 @@ unsigned long lastTimeSen = 0;
 void setup() {
   // put your setup code here, to run once:
   pinMode(PIN_BTN, INPUT_PULLUP);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println(F("Start BlynkGate I2C"));
   
   // Step 4: begin BlynkGate
