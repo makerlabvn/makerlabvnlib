@@ -2,8 +2,8 @@
 
 // Chọn chân đọc cảm biến.
 // Select the pin to read the sensor.
-#define ECHO_PIN 13
-#define TRIG_PIN 12
+#define ECHO_PIN 12
+#define TRIG_PIN 13
 
 // Cấu hình chân kết nối tín hiệu cho cảm biến siêu âm.
 // Configure the signal connection pins for the ultrasonic sensor.

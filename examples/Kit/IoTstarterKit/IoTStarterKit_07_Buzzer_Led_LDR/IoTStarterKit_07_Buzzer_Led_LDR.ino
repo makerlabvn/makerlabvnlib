@@ -34,7 +34,7 @@ bool lastDayState = 0;
 int temp_ldr = 0;
 int percentValue = 0;
 
-unsigned long lastTimeSen = 0;
+unsigned long lastTimeSend = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -55,8 +55,8 @@ void loop() {
   checkDayState();
   controlState();
   // Try using millis() and use "Blynk.virtualWrite" at least 10s at a time to avoid spamming the server
-  if (millis() - lastTimeSen >= 10000) {
-    lastTimeSen = millis();
+  if (millis() - lastTimeSend >= 10000) {
+    lastTimeSend = millis();
     Blynk.virtualWrite(2, percentValue);
     // Step 6: Send Virtual pin Value
   }

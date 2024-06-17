@@ -23,7 +23,7 @@ char pass[] = "";             // Key in your wifi password.
 
 MKL_OneButton myButton(BUTTON_PIN, true, true);
 
-unsigned long lastTimeSen = 0;
+unsigned long lastTimeSend = 0;
 int ledState = 0;
 
 void setup() {

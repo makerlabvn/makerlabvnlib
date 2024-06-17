@@ -27,7 +27,7 @@ MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 MKL_OneButton myButton(BUTTON_PIN, true, true);
 
-unsigned long lastTimeSen = 0;
+unsigned long lastTimeSend = 0;
 int ledState = 0;
 
 void setup() {

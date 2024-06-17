@@ -32,7 +32,7 @@ MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 MKL_OneButton myButton(BUTTON_PIN, true, true);
 
-unsigned long lastTimeSen = 0;
+unsigned long lastTimeSend = 0;
 
 int ledState = 0;
 
@@ -64,8 +64,8 @@ void loop() {
     intervalLCD = millis();
   }
   // Try using millis() and use "Blynk.virtualWrite" at least 10s at a time to avoid spamming the server
-  if (millis() - lastTimeSen >= 10000) {
-    lastTimeSen = millis();
+  if (millis() - lastTimeSend >= 10000) {
+    lastTimeSend = millis();
     Blynk.virtualWrite(1, brightnessPercent);
     // Step 6: Send Virtual pin Value
   }

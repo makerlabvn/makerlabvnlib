@@ -29,7 +29,7 @@ char auth[] = BLYNK_AUTH_TOKEN;
 char ssid[] = "MakerLab.vn";  // Key in your wifi name (Bandwidth 2.4Ghz). You can check with your smart phone for your wifi name
 char pass[] = "";             // Key in your wifi password.
 
-unsigned long intetvalLCD = 0;
+unsigned long intervalLCD = 0;
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 int percentValue = 0;
@@ -38,7 +38,7 @@ int temp_ldr = 0;
 bool dayState = 0;
 bool lastDayState = 0;
 
-unsigned long lastTimeSen = 0;
+unsigned long lastTimeSend = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -67,8 +67,8 @@ void loop() {
     intervalLCD = millis();
   }
   // Try using millis() and use "Blynk.virtualWrite" at least 10s at a time to avoid spamming the server
-  if (millis() - lastTimeSen >= 10000) {
-    lastTimeSen = millis();
+  if (millis() - lastTimeSend >= 10000) {
+    lastTimeSend = millis();
     Blynk.virtualWrite(2, percentValue);
     // Step 6: Send Virtual pin Value
   }

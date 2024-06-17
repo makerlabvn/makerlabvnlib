@@ -25,7 +25,7 @@ char pass[] = "";             // Key in your wifi password.
 unsigned long intervalLCD = 0;
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-unsigned long lastTimeSen = 0;
+unsigned long lastTimeSend = 0;
 
 int valuePotentiometer = 0;
 int mapValue = 0;
@@ -52,8 +52,8 @@ void loop() {
     intervalLCD = millis();
   }
   // Try using millis() and use "Blynk.virtualWrite" at least 10s at a time to avoid spamming the server
-  if (millis() - lastTimeSen >= 10000) {
-    lastTimeSen = millis();
+  if (millis() - lastTimeSend >= 10000) {
+    lastTimeSend = millis();
     Blynk.virtualWrite(1, percent);
     // Step 6: Send Virtual pin Value
   }

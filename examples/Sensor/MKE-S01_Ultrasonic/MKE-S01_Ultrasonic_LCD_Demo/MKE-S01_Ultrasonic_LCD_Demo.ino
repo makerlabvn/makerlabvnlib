@@ -6,8 +6,8 @@ MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 #include <MKL_HCSR04.h>
 // Chọn chân đọc cảm biến.
 // Select the pin to read the sensor.
-#define ECHO_PIN 13
-#define TRIG_PIN 12
+#define ECHO_PIN 12
+#define TRIG_PIN 13
 // Cấu hình chân kết nối tín hiệu cho cảm biến siêu âm.
 // Configure the signal connection pins for the ultrasonic sensor.
 MKL_HCSR04 ultra(TRIG_PIN, ECHO_PIN);
