@@ -157,7 +157,7 @@ public:
   }
 
   bool setName(String pa_strName){  // max 12 character in "+NAME=123456789012"
-    String tempString = pa_strName.substring(0,min(11, pa_strName.length()));
+    String tempString = pa_strName.substring(0,min(11, (int)pa_strName.length()));
     if(this->baudRate != 0){
       this->myp_Serial->begin(this->baudRate);
       this->setDisconnect();
