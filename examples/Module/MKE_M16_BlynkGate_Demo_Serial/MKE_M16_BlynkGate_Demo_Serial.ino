@@ -6,9 +6,9 @@
 
 //Cấu hình Blynk Firmware (copy từ mục Blynk Firmware Info)
 //Blynk Firmware Configuration (copy from Blynk Firmware Info)
-#define BLYNK_TEMPLATE_ID "TMPL6DgAJltbL"
-#define BLYNK_TEMPLATE_NAME "Wifi Switch 4CH"
-#define BLYNK_AUTH_TOKEN "TJX_TajWwZJ5NPHQEISRdZHtJQSbsHw_"
+#define BLYNK_TEMPLATE_ID "Copy_BLYNK_TEMPLATE_ID_From_BlynkCloud"
+#define BLYNK_TEMPLATE_NAME "Copy_BLYNK_TEMPLATE_NAME_From_BlynkCloud"
+#define BLYNK_AUTH_TOKEN "Copy_BLYNK_AUTH_TOKEN_From_BlynkCloud"
 
 // Cấu hình Auth Token
 // Auth Token Configuration
