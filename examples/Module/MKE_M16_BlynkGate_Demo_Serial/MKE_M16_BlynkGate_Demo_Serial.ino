@@ -1,5 +1,3 @@
-
-
 // Thêm bộ thư viện
 // Add the library.
 #include "BlynkGate.h"
@@ -16,8 +14,8 @@ char auth[] = BLYNK_AUTH_TOKEN;
 
 // Cấu hình Wifi (chỉ nhận wifi 2.4G)
 // Wifi Configuration (only wifi 2.4G accepted)
-char ssid[] = "Hshop.vn";  // Wifi name (SSID)
-char pass[] = "";          // Wifi password.
+char ssid[] = "WiFi name 2.4G";  // Wifi name (SSID)
+char pass[] = "WiFi PassWord";          // Wifi password.
 
 //Khai báo các biến sử dụng.
 //Declare Variable
