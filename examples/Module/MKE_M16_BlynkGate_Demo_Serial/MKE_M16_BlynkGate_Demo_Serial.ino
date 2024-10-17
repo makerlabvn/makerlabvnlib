@@ -70,7 +70,6 @@ BLYNK_WRITE_DEFAULT() {
 
   // Control Led
   if(DetectPin == 1){
-    // digitalWrite(ledPin, PinValue);
     digitalWrite(ledPin, PinValue);
   }
 
