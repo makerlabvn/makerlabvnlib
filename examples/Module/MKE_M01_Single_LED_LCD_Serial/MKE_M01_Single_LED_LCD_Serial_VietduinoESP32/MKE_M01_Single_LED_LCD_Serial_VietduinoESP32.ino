@@ -1,22 +1,13 @@
 // Thêm bộ thư viện
 // Add the library.
 #include <MKL_LiquidCrystal_I2C.h>
-#include "MKL_OneButton.h"
 
 // Khởi tạo LCD
 // LCD config
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // Đặt tên cho chân kết nối Module
-#define SIG_PIN 12     // Digital pin connected to the module
-
-// Khai báo module.
-// Declare module.
-MKL_OneButton btn = MKL_OneButton(
-    SIG_PIN, // Cấu hình đây là chân Digital Input.
-    true,       // Nút nhấn kích hoạt LOW.
-    false       // Kích hoạt điện trở nội "Pull-Up".
-);
+#define SIG_PIN 5     // IO5-D10 on Vietduino ESP32 (D10 on MakerEDU Shield)
 
 void setup()
 {
@@ -29,39 +20,46 @@ void setup()
   // Start the Serial UART connection at 115200 to transfer data to the computer.
   Serial.begin(115200);
 
-  // Khởi tạo module
-  // init module
-  btn.attachClick(myClickEvent);
-  btn.attachDoubleClick(myDoubleClickEvent);
+  // Cấu hình đây là chân Digital Output.
+  // Config this is Digital Output.
+  pinMode(SIG_PIN, OUTPUT);
 }
 
 void loop()
 {
-  // Lấy giá trị module
-  // Get data module
-  btn.tick();
-}
+  // Bật.
+  // Turn on.
+  digitalWrite(SIG_PIN, HIGH);
 
-void myClickEvent(){
   //Gửi giá trị module lên LCD
   //Show the module value on LCD
   lcd.setCursor(1,0);
-  lcd.print("Click");
+  lcd.print("Status: ON");
   lcd.print("   ");
 
   // Hiển thị giá trị của module lên máy tính.
   // Show the module value on Arduno Serial Monitor
-  Serial.println("Click");
-}
+  Serial.println("ON");
+  
+  // Chờ 1000ms
+  // Wait 1000ms
+  delay(1000);
 
-void myDoubleClickEvent(){
+  // Tắt.
+  // Turn off.
+  digitalWrite(SIG_PIN, LOW);
+
   //Gửi giá trị module lên LCD
   //Show the module value on LCD
   lcd.setCursor(1,0);
-  lcd.print("2x Click");
+  lcd.print("Status: OFF");
   lcd.print("   ");
 
   // Hiển thị giá trị của module lên máy tính.
   // Show the module value on Arduno Serial Monitor
-  Serial.println("2x Click");
+  Serial.println("OFF");
+  
+  // Chờ 1000ms
+  // Wait 1000ms
+  delay(1000);
 }
