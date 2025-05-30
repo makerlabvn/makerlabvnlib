@@ -10,8 +10,8 @@
 // LCD config
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-#define TX_PIN 12
-#define RX_PIN 13
+#define TX_PIN 3
+#define RX_PIN 2
 
 // Khai báo module.
 // Declare module.
@@ -35,8 +35,8 @@ void setup()
   // Khởi tạo module
   // init module
   
-  // MKE_M15.setBaudrate(9600); // safe speed for SoftwareSerial is 9600
-  // MKE_M15.setName("MKE-M15"); // max 12 characters
+  MKE_M15.setBaudrate(9600); // safe speed for SoftwareSerial is 9600
+  MKE_M15.setName("MKE-M15"); // max 12 characters
   mySoftwareSerial.begin(9600);
   Dabble.begin(mySoftwareSerial);
   
