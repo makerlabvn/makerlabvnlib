@@ -8,8 +8,8 @@
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // Đặt tên cho chân kết nối cảm biến
-#define ECHO_PIN 19
-#define TRIG_PIN 18
+#define ECHO_PIN 19 // Chân D12 của Vietduino ESP32
+#define TRIG_PIN 18 // Chân D13 của Vietduino ESP32
 
 // Cấu hình chân kết nối tín hiệu cho cảm biến.
 // Configure the signal connection pins for the sensor.

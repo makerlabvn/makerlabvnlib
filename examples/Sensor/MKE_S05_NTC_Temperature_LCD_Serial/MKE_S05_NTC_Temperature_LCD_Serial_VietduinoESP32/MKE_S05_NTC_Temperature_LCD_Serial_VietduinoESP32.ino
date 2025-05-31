@@ -8,7 +8,7 @@ MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // Đặt tên cho chân kết nối cảm biến
 // These constants won't change. They're used to give names to the pins used:
-const int analogInPin = 34;  // ESP32: Analog input pin IO34
+const int analogInPin = 34;  // chân A1 của VietduinoESP32
 
 // Tạo biến số nguyên lưu giá trị cảm biến
 // value read from the sensor

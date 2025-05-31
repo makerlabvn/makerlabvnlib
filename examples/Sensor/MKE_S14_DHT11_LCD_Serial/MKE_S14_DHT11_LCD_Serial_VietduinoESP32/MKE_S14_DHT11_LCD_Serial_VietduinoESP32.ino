@@ -8,7 +8,7 @@
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // Đặt tên cho chân kết nối cảm biến
-#define DHTPIN 23     // Digital pin connected to the DHT sensor (ESP32)
+#define DHTPIN 23     // Chân D11 của Vietduino ESP32
 
 MKL_DHT dht(DHTPIN, DHT11);
 
