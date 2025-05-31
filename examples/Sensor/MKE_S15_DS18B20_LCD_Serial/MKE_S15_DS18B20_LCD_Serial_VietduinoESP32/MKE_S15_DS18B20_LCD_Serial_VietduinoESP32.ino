@@ -8,7 +8,7 @@
 MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // Đặt tên cho chân kết nối cảm biến
-#define DS18B20_PIN 23     // Chân D11 của Vietduino ESP32
+#define DS18B20_PIN 23     // IO23-D11 on Vietduino ESP32 (D10 on MakerEdu Shield)
 
 OneWire oneWire_10(DS18B20_PIN);
 MKL_DS18B20 sensor(&oneWire_10);
