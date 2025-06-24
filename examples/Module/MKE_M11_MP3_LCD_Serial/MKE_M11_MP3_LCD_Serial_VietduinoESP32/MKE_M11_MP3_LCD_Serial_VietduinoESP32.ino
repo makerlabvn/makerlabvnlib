@@ -28,8 +28,6 @@ void setup()
 
   // Khởi tạo module
   // init module
-  mySoftwareSerial.begin(9600);
-  delay(200);
   myDFPlayer.begin(mySoftwareSerial, true,true);
   delay(100);
   
