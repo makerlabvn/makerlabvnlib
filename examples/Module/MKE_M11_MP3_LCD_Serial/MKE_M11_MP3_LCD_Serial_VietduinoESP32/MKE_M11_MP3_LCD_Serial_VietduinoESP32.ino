@@ -22,13 +22,15 @@ void setup()
   lcd.init();
   lcd.backlight();
 
-  // Khởi động kết nối Serial UART ở tốc độ 115200 để truyền dữ liệu lên máy tính.
-  // Start the Serial UART connection at 115200 to transfer data to the computer.
+  // Khởi động kết nối Serial UART ở tốc độ 115200 để truyền dữ liệu lên máy tính
+  // Start the Serial UART connection at 115200 to transfer data to the computer
   Serial.begin(115200);
 
-  // Khởi tạo module
-  // init module
-  myDFPlayer.begin(mySoftwareSerial, true,true);
+  // Khởi tạo module với Serial2
+  // Initialize module with Serial2
+  Serial2.begin(9600, SERIAL_8N1, RX_PIN, TX_PIN);
+  delay(200);
+  myDFPlayer.begin(Serial2, true, true);
   delay(100);
   
   // Cài đặt giao tiếp serial mỗi 500ms
