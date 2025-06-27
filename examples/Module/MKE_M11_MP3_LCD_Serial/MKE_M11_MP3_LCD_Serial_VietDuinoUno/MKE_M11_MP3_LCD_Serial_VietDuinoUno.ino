@@ -36,13 +36,20 @@ void setup()
   myDFPlayer.begin(mySoftwareSerial, true,true);
   delay(100);
   
+  // Cài đặt giao tiếp serial mỗi 500ms
+  // Set serial communictaion time out 500ms
   myDFPlayer.setTimeOut(500);
+
+  // Cài đặt âm lượng (3~30).
+  // Set volume value (0~30).
   myDFPlayer.volume(30);
   
 }
 
 void loop()
 {
+  // Phát file mp3 ở đường dẫn SD:/MP3/0001.mp3
+  // Play specific mp3 in SD:/MP3/0001.mp3
   myDFPlayer.playMp3Folder(1);
 
   // Hiển thị giá trị của module lên máy tính.
@@ -58,6 +65,8 @@ void loop()
   // Wait 2000ms  
   delay(2000);
 
+  // Dừng file đang phát
+  // Stop the current file
   myDFPlayer.stop();
 
   // Hiển thị giá trị của module lên máy tính.

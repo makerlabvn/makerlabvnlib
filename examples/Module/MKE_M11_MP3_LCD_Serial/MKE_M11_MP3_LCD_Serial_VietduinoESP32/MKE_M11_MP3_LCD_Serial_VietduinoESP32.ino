@@ -33,40 +33,50 @@ void setup()
   myDFPlayer.begin(Serial2, true, true);
   delay(100);
   
+  // Cài đặt giao tiếp serial mỗi 500ms
+  // Set serial communictaion time out 500ms
   myDFPlayer.setTimeOut(500);
-  myDFPlayer.volume(30); // Volume range: 0-30
+
+  // Cài đặt âm lượng (3~30).
+  // Set volume value (0~30).
+  myDFPlayer.volume(30);
+  
 }
 
 void loop()
 {
+  // Phát file mp3 ở đường dẫn SD:/MP3/0001.mp3
+  // Play specific mp3 in SD:/MP3/0001.mp3
   myDFPlayer.playMp3Folder(1);
 
-  // Hiển thị giá trị của module lên máy tính
-  // Show the module value on Arduino Serial Monitor
+  // Hiển thị giá trị của module lên máy tính.
+  // Show the module value on Arduno Serial Monitor
   Serial.println("Play file 1");
 
-  // Gửi giá trị module lên LCD
-  // Show the module value on LCD
-  lcd.setCursor(0, 0);
-  lcd.print("Play file 1    "); // Thêm khoảng trắng để xóa văn bản cũ
+  //Gửi giá trị module lên LCD
+  //Show the module value on LCD
+  lcd.setCursor(0,0);
+  lcd.print("Play file 1");
 
   // Chờ 2000ms
-  // Wait 2000ms
+  // Wait 2000ms  
   delay(2000);
 
+  // Dừng file đang phát
+  // Stop the current file
   myDFPlayer.stop();
 
-  // Hiển thị giá trị của module lên máy tính
-  // Show the module value on Arduino Serial Monitor
+  // Hiển thị giá trị của module lên máy tính.
+  // Show the module value on Arduno Serial Monitor
   Serial.println("Stop file 1");
 
-  // Gửi giá trị module lên LCD
-  // Show the module value on LCD
+  //Gửi giá trị module lên LCD
+  //Show the module value on LCD
   lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Stop file 1    "); // Thêm khoảng trắng để xóa văn bản cũ
+  lcd.setCursor(0,0);
+  lcd.print("Stop file 1");
 
   // Chờ 2000ms
-  // Wait 2000ms
+  // Wait 2000ms  
   delay(2000);
 }
